@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  postgres_connectify:
+    image: postgres
+    container_name: postgres-container
+    environment:
+      - POSTGRES_DB=connectify
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./database/postgres-data:/var/lib/postgresql/data
